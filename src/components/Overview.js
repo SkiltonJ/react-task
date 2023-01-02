@@ -4,9 +4,9 @@ const Overview = (props) => {
   const { tasks } = props;
 
   return (
-    <ul>
-      {tasks.map((task) => {
-        return <li key={task.id}>{task.text}</li>;
+    <ul style={{ listStyleType: 'none' }}>
+      {tasks.map((task, index) => {
+        return <li key={task.id}>{index + 1}. {task.text}</li>;
       })}
     </ul>
   );

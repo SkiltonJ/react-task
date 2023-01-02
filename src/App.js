@@ -11,7 +11,7 @@ class App extends Component {
         text: '',
         id: uniqid()
       },
-      tasks: []
+      tasks: [],
     };
   }
 
