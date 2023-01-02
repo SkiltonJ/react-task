@@ -15,6 +15,14 @@ class App extends Component {
     };
   }
 
+  deleteTask = (e, index) => {
+    e.preventDefault();
+    const tasks = this.state.tasks.slice();
+
+    tasks.splice(index, 1);
+    this.setState( { tasks });
+  }
+
   handleChange = (e) => {
     this.setState({
       task: {
@@ -47,7 +55,7 @@ class App extends Component {
             Add Task
           </button>
         </form>
-        <Overview tasks={tasks}/>
+        <Overview tasks={tasks} deleteTask={this.deleteTask}/>
       </div>
     );
   }
